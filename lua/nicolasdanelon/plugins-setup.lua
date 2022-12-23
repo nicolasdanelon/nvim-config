@@ -24,6 +24,10 @@ end
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
+ 
+  -- nice, smooth colorscheme
+  use("arcticicestudio/nord-vim")
+
   if packer_bootstrap then
     require('packer').sync()
   end
