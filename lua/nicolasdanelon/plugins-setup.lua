@@ -26,19 +26,38 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
   -- required by many nvim plugins
   use("nvim-lua/plenary.nvim")
+
+  -- file explorer
+  use("nvim-tree/nvim-tree.lua")
+
+  -- icons
+  use("nvim-tree/nvim-web-devicons")
+
   -- maximizes and restores current window
   use("szw/vim-maximizer")
+
   -- nice, smooth colorscheme
   use("arcticicestudio/nord-vim")
- -- the essentials
+
+  -- the essentials
   use("tpope/vim-surround")
   use("vim-scripts/ReplaceWithRegister")
+
   -- commenting with gc
   use("numToStr/Comment.nvim")
-    -- Auto-pairs
+
+  -- Auto-pairs
   use("windwp/nvim-autopairs")
+
   -- statusline
   use("nvim-lualine/lualine.nvim")
+
+  -- fuzzy finder
+  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
+
+  -- git
+  use("lewis6991/gitsigns.nvim")
 
   if packer_bootstrap then
     require('packer').sync()

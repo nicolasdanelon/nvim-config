@@ -5,4 +5,6 @@ require("nicolasdanelon.core.colorscheme")
 require("nicolasdanelon.plugins.autopairs")
 require("nicolasdanelon.plugins.comment")
 require("nicolasdanelon.plugins.lualine")
-
+require("nicolasdanelon.plugins.nvim-tree")
+require("nicolasdanelon.plugins.telescope")
+require("nicolasdanelon.plugins.gitsigns")
