@@ -24,13 +24,24 @@ end
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
- 
+  -- required by many nvim plugins
+  use("nvim-lua/plenary.nvim")
+  -- maximizes and restores current window
+  use("szw/vim-maximizer")
   -- nice, smooth colorscheme
   use("arcticicestudio/nord-vim")
+ -- the essentials
+  use("tpope/vim-surround")
+  use("vim-scripts/ReplaceWithRegister")
+  -- commenting with gc
+  use("numToStr/Comment.nvim")
+    -- Auto-pairs
+  use("windwp/nvim-autopairs")
+  -- statusline
+  use("nvim-lualine/lualine.nvim")
 
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
-
 

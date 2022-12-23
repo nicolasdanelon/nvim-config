@@ -43,3 +43,6 @@ keymap.set("n", "<c-j>", "<c-w>j")
 keymap.set("n", "<c-k>", "<c-w>k")
 keymap.set("n", "<c-l>", "<c-w>l")
 
+-- plugins
+-- vim-maximizer
+keymap.set("n", "<leader>sm", ":MaximizerToggle<cr>")
