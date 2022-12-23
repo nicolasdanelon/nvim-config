@@ -8,7 +8,7 @@ https://github.com/arcticicestudio/nord-iterm2
 
 https://github.com/Karmenzind/monaco-nerd-fonts
 
-### prettierd
+### prettierd, a daemon, for ludicrous formatting speed.
 
 ```
 npm install -g @fsouza/prettierd
