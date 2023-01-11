@@ -1,5 +1,10 @@
 # Neovim Config
 
+## Install
+mkdir -p $HOME/.config/nvim
+
+git clone https://github.com/nicolasdanelon/nvim-config $HOME/.config/nvim
+
 ### An arctic, north-bluish clean and elegant iTerm2 color scheme.
 
 https://github.com/arcticicestudio/nord-iterm2
