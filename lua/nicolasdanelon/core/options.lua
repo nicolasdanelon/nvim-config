@@ -32,3 +32,13 @@ opt.backspace = "indent,eol,start"
 opt.splitright = true
 opt.splitbelow = true
 
+-- no swaps or backups
+opt.swapfile = false
+opt.backup = false
+
+-- undo file
+opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
+opt.undofile = true
+
+-- quick refresh
+opt.updatetime = 50
