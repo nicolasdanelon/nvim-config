@@ -12,6 +12,7 @@ require("nicolasdanelon.plugins.nvim-cmp")
 require("nicolasdanelon.plugins.nvim-tree")
 require("nicolasdanelon.plugins.null-ls")
 require("nicolasdanelon.plugins.prettier")
+require("nicolasdanelon.plugins.treesitter")
 require("nicolasdanelon.plugins.telescope")
 
 require("nicolasdanelon.plugins.lsp.mason")

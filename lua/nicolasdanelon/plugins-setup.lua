@@ -48,6 +48,7 @@ return packer.startup(function(use)
 
   -- Auto-pairs
   use("windwp/nvim-autopairs")
+  use("windwp/nvim-ts-autotag")
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
@@ -80,6 +81,14 @@ return packer.startup(function(use)
 
   -- LSP servers
   use("jose-elias-alvarez/typescript.nvim")
+
+  -- treesitter
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function ()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end
+  })
 
   -- formatting
   use("jose-elias-alvarez/null-ls.nvim")
