@@ -15,6 +15,5 @@ require("nicolasdanelon.plugins.prettier")
 require("nicolasdanelon.plugins.telescope")
 
 require("nicolasdanelon.plugins.lsp.mason")
-require("nicolasdanelon.plugins.lsp.lspsaga")
 require("nicolasdanelon.plugins.lsp.lspconfig")
 

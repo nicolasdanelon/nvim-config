@@ -27,10 +27,28 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ["<c-k>"] = cmp.mapping.select_prev_item(),
     ["<c-j>"] = cmp.mapping.select_next_item(),
-    -- TODO: not working
-    -- ["<c-b>"] = cmp.mapping.scroll_docs(-4),
-    -- ["<c-f>"] = cmp.mapping.scroll_docs(4),
-    -- ["<C-Space>"] = cmp.mapping.complete(),
+    ["<c-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1)),
+    ["<c-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1)),
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expandable() then
+        luasnip.expand()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end),
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end),
     ["<c-e>"] = cmp.mapping.abort(),
     ["<cr>"] = cmp.mapping.confirm({ select = false }),
   }),
@@ -42,9 +60,26 @@ cmp.setup({
   }),
   formatting = {
     format = lspkind.cmp_format({
-      maxwidth = 50,
-      ellipsis_char = "...",
+      -- maxwidth = 180,
+      -- ellipsis_char = "...",
+    fields = { "kind", "abbr", "menu" },
+    format = function (entry, item)
+      -- item.kind = string.format("%s", item.kind)
+      item.menu = ({
+        nvim_lsp = "[LSP]",
+        luasnip = "[Snippet]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+      })[entry.source.name]
+      return item
+    end,
     }),
   },
+  window = {
+    documentation = cmp.config.window.bordered(),
+  },
+  experimental = {
+    ghost_text = true
+  }
 })
 

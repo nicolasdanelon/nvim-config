@@ -24,6 +24,7 @@ end
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
+
   -- required by many nvim plugins
   use("nvim-lua/plenary.nvim")
 
@@ -75,7 +76,6 @@ return packer.startup(function(use)
   use("neovim/nvim-lspconfig")
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
-  use({ "glepnir/lspsaga.nvim", branch = "main" })
   use("onsails/lspkind.nvim")
 
   -- LSP servers

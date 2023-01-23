@@ -17,6 +17,7 @@ mason_lspconfig.setup({
     "cssls",
     "tailwindcss",
     "sumneko_lua",
+    "rust_analyzer"
   }
 })
 
