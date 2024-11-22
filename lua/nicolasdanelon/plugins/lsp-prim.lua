@@ -16,7 +16,7 @@ lsp.ensure_installed({
   "html",
   "cssls",
   "tailwindcss",
-  "sumneko_lua",
+  "lua_ls",
 })
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }

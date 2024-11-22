@@ -71,7 +71,8 @@ lspconfig["tailwindcss"].setup({
   on_attach = on_attach,
 })
 
-lspconfig["sumneko_lua"].setup({
+-- todo check if works
+lspconfig["lua_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {

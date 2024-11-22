@@ -21,6 +21,8 @@
 | ysw'    | add souronding '              |
 | cs"'    | change souronding from " to ' |
 | cs"d    | delete souronding "           |
+| %       | navigate between { and (      |
+| dt,     | delete unitl comma            |
 
 | Motions          | Action                   |
 | ---------------- | ------------------------ |
