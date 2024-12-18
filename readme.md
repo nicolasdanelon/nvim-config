@@ -86,3 +86,6 @@ npm install -g @fsouza/prettierd
 ```
 
 https://github.com/fsouza/prettierd
+
+### Kitty themes
+https://github.com/dexpota/kitty-themes (Later_This_Evening)
