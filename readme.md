@@ -66,10 +66,16 @@ This document provides an overview of the Neovim setup and configurations define
 
 ---
 
-## Install
-mkdir -p $HOME/.config/nvim
+## Installation
 
+### Addding the folder
+```bash
+mkdir -p $HOME/.config/nvim
+```
+
+```bash
 git clone https://github.com/nicolasdanelon/nvim-config $HOME/.config/nvim
+```
 
 ### An arctic, north-bluish clean and elegant iTerm2 color scheme.
 
@@ -81,7 +87,7 @@ https://github.com/Karmenzind/monaco-nerd-fonts
 
 ### prettierd, a daemon, for ludicrous formatting speed.
 
-```
+```bash
 npm install -g @fsouza/prettierd
 ```
 
