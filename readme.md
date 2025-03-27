@@ -2,6 +2,9 @@
 
 This document provides an overview of the Neovim setup and configurations defined in the `cond.lua` file. Below is a breakdown of the key features and customizations included in the setup.
 
+![nvim proxxyy](./nvim-proxxyy.png)
+![tmux proxxyy](./tmux-proxxyy.png)
+
 ---
 
 ## Key Mappings
