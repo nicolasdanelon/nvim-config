@@ -10,7 +10,6 @@ require("nicolasdanelon.plugins.lualine")
 require("nicolasdanelon.plugins.gitsigns")
 require("nicolasdanelon.plugins.nvim-cmp")
 require("nicolasdanelon.plugins.nvim-tree")
-require("nicolasdanelon.plugins.null-ls")
 require("nicolasdanelon.plugins.prettier")
 require("nicolasdanelon.plugins.telescope")
 

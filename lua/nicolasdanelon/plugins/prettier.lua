@@ -42,16 +42,5 @@ prettier.setup({
     vue_indent_script_and_style = false,
     config_precedence = "prefer-file",
   },
-  ["null-ls"] = {
-    condition = function()
-      return prettier.config_exists({
-        check_package_json = true,
-      })
-    end,
-    runtime_condition = function()
-      return true
-    end,
-    timeout = 5000,
-  },
 })
 
