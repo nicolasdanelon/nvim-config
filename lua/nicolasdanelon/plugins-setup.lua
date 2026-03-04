@@ -78,9 +78,6 @@ return packer.startup(function(use)
   use("williamboman/mason-lspconfig.nvim")
   use("onsails/lspkind.nvim")
 
-  -- LSP servers
-  use("jose-elias-alvarez/typescript.nvim")
-
   -- formatting
   use("MunifTanjim/prettier.nvim")
 
@@ -88,4 +85,3 @@ return packer.startup(function(use)
     require('packer').sync()
   end
 end)
-

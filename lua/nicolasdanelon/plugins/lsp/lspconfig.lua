@@ -1,23 +1,12 @@
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then
-  return
-end
-
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
-  return
-end
-
-
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
   return
 end
 
 local keymap = vim.keymap
 
 -- enable keybinds for available lsp server
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   -- keybind options
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -34,47 +23,27 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
   keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts)
-
-  -- typescript-specific keymaps
-  if client.name == "tsserver" then
-    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>")
-    keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>")
-    keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>")
-  end
 end
 
 -- enable autocompletion
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
-typescript.setup({
-  server = capabilities,
-  on_attach = on_attach,
-})
-
-lspconfig["html"].setup({
+local default_config = {
   capabilities = capabilities,
   on_attach = on_attach,
-})
+}
 
-lspconfig["cssls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
+local function setup(server_name, opts)
+  vim.lsp.config(server_name, vim.tbl_deep_extend("force", default_config, opts or {}))
+  vim.lsp.enable(server_name)
+end
 
-lspconfig["rust_analyzer"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
-lspconfig["tailwindcss"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
--- todo check if works
-lspconfig["lua_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+setup("ts_ls")
+setup("html")
+setup("cssls")
+setup("rust_analyzer")
+setup("tailwindcss")
+setup("lua_ls", {
   settings = {
     Lua = {
       diagnostics = {
@@ -89,4 +58,3 @@ lspconfig["lua_ls"].setup({
     },
   },
 })
-

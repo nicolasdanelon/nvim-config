@@ -12,7 +12,7 @@ end
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-  "tsserver",
+  "ts_ls",
   "html",
   "cssls",
   "tailwindcss",
@@ -54,4 +54,3 @@ end
 )
 
 lsp.setup()
-
